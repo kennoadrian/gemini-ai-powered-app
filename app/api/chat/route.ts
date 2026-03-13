@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import { getGenAi } from "@/lib/ai";
+import { getGenAi, AVAILABLE_MODELS } from "@/lib/ai";
 import { RAG_CONTEXT } from "@/lib/rag";
 import { getCachedResponse, setCachedResponse } from "@/lib/redis";
 
@@ -17,6 +17,25 @@ function buildRagPrompt(userPrompt: string): string {
 Visitor question: ${userPrompt.trim()}
 
 Answer (based only on the knowledge base above):`;
+}
+
+async function generateWithModelRotation(fullPrompt: string): Promise<{ text: string; model: string }> {
+  const genAi = getGenAi();
+  let lastError: unknown;
+
+  for (const modelId of AVAILABLE_MODELS) {
+    try {
+      const model = genAi.getGenerativeModel({ model: modelId });
+      const result = await model.generateContent(fullPrompt);
+      const text = result.response.text();
+      return { text, model: modelId };
+    } catch (err) {
+      lastError = err;
+      console.warn(`Gemini model ${modelId} failed, trying next:`, err);
+    }
+  }
+
+  throw lastError ?? new Error("All models failed");
 }
 
 export async function GET() {
@@ -43,10 +62,8 @@ export async function POST(request: Request) {
       return Response.json({ success: true, response: cached, cached: true });
     }
 
-    const model = getGenAi().getGenerativeModel({ model: "gemini-2.5-flash" });
     const fullPrompt = buildRagPrompt(userPrompt);
-    const result = await model.generateContent(fullPrompt);
-    const responseText = result.response.text();
+    const { text: responseText } = await generateWithModelRotation(fullPrompt);
 
     await setCachedResponse(cacheKey, responseText);
 
@@ -56,7 +73,7 @@ export async function POST(request: Request) {
       cached: false,
     });
   } catch (error) {
-    console.error("Error generating content:", error);
+    console.error("Error generating content (all models failed):", error);
     return Response.json(
       { success: false, error: "Failed to generate response" },
       { status: 500 }
