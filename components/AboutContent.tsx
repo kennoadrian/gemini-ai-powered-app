@@ -134,7 +134,7 @@ export function AboutContent() {
       {TEAM.map((member) => (
         <motion.section key={member.key} variants={item} className="space-y-5">
           <div className="flex items-center gap-4">
-            <div className="relative size-14 overflow-hidden rounded-full ring-2 ring-primary/25">
+            <div className="relative size-14 overflow-hidden rounded-full ring-2 ring-primary/25 shadow-[0_0_0_1px_rgba(255,255,255,0.08)]">
               <Image src={member.photo} alt={member.name} fill className="object-cover" />
             </div>
             <div>
@@ -145,7 +145,7 @@ export function AboutContent() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {member.cards.map((card) => (
-              <Card key={card.title} className="overflow-hidden transition-shadow hover:shadow-md">
+              <Card key={card.title} className="fx-glass overflow-hidden transition-shadow hover:shadow-lg">
                 <CardHeader className="flex flex-row items-center gap-2 pb-2">
                   <card.icon className="size-5 text-primary" />
                   <h3 className="text-lg font-semibold">{card.title}</h3>

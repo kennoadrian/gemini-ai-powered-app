@@ -20,11 +20,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.variable}>
+    <html lang="en" className={`${roboto.variable} dark`}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Chatbox />
+        <div className="relative min-h-dvh">
+          <div className="pointer-events-none absolute inset-0 fx-grid opacity-70" />
+          <div className="pointer-events-none absolute inset-0 fx-scanline opacity-25" />
+          <div className="pointer-events-none absolute inset-0 fx-noise" />
+          <div className="relative">
+            <Navbar />
+            {children}
+            <Chatbox />
+          </div>
+        </div>
       </body>
     </html>
   );

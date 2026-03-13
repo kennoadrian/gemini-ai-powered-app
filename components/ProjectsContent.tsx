@@ -51,7 +51,7 @@ export function ProjectsContent() {
     >
       {MOCK_PROJECTS.map((project) => (
         <motion.div key={project.title} variants={item}>
-          <Card className="flex flex-col transition-shadow hover:shadow-lg">
+          <Card className="fx-glass flex flex-col transition-shadow hover:shadow-xl">
             <CardHeader className="pb-2">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-2">
@@ -73,7 +73,7 @@ export function ProjectsContent() {
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-lg bg-muted px-2 py-0.5 text-xs font-medium text-foreground"
+                    className="rounded-xl bg-muted/60 px-2.5 py-1 text-xs font-medium text-foreground shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
                   >
                     {tech}
                   </span>

@@ -102,9 +102,9 @@ export function Chatbox() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ type: "spring", bounce: 0.2, duration: 0.35 }}
-            className="fixed bottom-24 right-6 z-50 w-[360px] overflow-hidden rounded-2xl border border-border bg-card shadow-xl"
+            className="fixed bottom-24 right-3 z-50 w-[360px] max-w-[calc(100vw-1.5rem)] overflow-hidden rounded-2xl border border-border bg-card shadow-xl sm:right-6"
           >
-            <div className="border-b border-border bg-linear-to-b from-muted/60 to-muted/30 px-4 py-3">
+            <div className="border-b border-border bg-linear-to-b from-muted/70 to-muted/30 px-4 py-3">
               <h3 className="font-semibold text-foreground">Ask Wild Dogs</h3>
               <p className="text-xs text-muted-foreground">
                 Ask about Kenno or Erana — I&apos;ll answer from the team portfolio.
@@ -130,8 +130,8 @@ export function Chatbox() {
                       className={cn(
                         "rounded-xl px-3 py-2 text-sm",
                         m.role === "user"
-                          ? "ml-8 bg-primary text-primary-foreground"
-                          : "mr-8 bg-muted text-foreground"
+                          ? "ml-8 bg-primary text-primary-foreground shadow-[0_0_0_1px_rgba(255,255,255,0.08)]"
+                          : "mr-8 bg-muted/70 text-foreground shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
                       )}
                     >
                       <div className="whitespace-pre-wrap wrap-break-word">{m.content}</div>
@@ -141,7 +141,7 @@ export function Chatbox() {
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="mr-8 rounded-xl bg-muted px-3 py-2 text-sm text-muted-foreground"
+                      className="mr-8 rounded-xl bg-muted/70 px-3 py-2 text-sm text-muted-foreground shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
                     >
                       <span className="inline-flex gap-1">
                         <span className="animate-bounce">.</span>
@@ -160,7 +160,7 @@ export function Chatbox() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask anything..."
-                  className="min-h-[44px] max-h-[120px] resize-none rounded-xl"
+                  className="min-h-[44px] max-h-[120px] resize-none rounded-xl bg-background/40"
                   onKeyDown={(e) => {
                     if (e.key === "Enter" && !e.shiftKey) {
                       e.preventDefault();

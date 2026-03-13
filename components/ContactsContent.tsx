@@ -31,7 +31,7 @@ export function ContactsContent() {
       className="space-y-6"
     >
       <motion.div variants={item}>
-        <Card className="transition-shadow hover:shadow-md">
+        <Card className="fx-glass transition-shadow hover:shadow-lg">
           <CardHeader className="flex flex-row items-center gap-2 pb-2">
             <Mail className="size-5 text-primary" />
             <h2 className="text-lg font-semibold">Email</h2>
@@ -54,7 +54,7 @@ export function ContactsContent() {
         </Card>
       </motion.div>
       <motion.div variants={item}>
-        <Card className="transition-shadow hover:shadow-md">
+        <Card className="fx-glass transition-shadow hover:shadow-lg">
           <CardHeader className="flex flex-row items-center gap-2 pb-2">
             <MessageSquare className="size-5 text-primary" />
             <h2 className="text-lg font-semibold">AI assistant</h2>
