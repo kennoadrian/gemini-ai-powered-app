@@ -15,6 +15,30 @@ Kenno Adrian B. Ricaplaza is a 3rd year Bachelor of Science in Information Techn
 Background:
 Kenno is a passionate IT student who enjoys building web applications and continuously improving his programming skills. He is interested in developing modern web systems and exploring new technologies related to software development.
 
+Address:
+Ibabao, Bangkal, Cordova 
+
+Birthday:
+September 28,2005
+
+Cellphone Number:
+09926152859
+
+Email:
+kennoadrianricaplaza@gmail.com
+
+Gender:
+Male
+
+Age:
+20
+
+Our Handsome Teacher:
+Allan C. Godinez - he is a good teacher and handsome teacher in programming
+
+Our expected grade:
+- All of my classmates will have 1.0 grade in his subject
+
 Technical Skills:
 Kenno has experience with the following technologies:
 - JavaScript
