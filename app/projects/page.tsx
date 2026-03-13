@@ -1,8 +1,8 @@
 import { ProjectsContent } from "@/components/ProjectsContent";
 
 export const metadata = {
-  title: "Projects | Kenno Adrian B. Ricaplaza",
-  description: "Projects by Kenno Adrian — web apps and software development.",
+  title: "Projects | Wild Dogs",
+  description: "Projects by Wild Dogs — a duo portfolio by Kenno and Erana.",
 };
 
 export default function ProjectsPage() {

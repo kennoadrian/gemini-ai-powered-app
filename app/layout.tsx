@@ -9,9 +9,9 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kenno Adrian B. Ricaplaza | Portfolio",
+  title: "Wild Dogs | Duo Portfolio",
   description:
-    "Portfolio of Kenno Adrian B. Ricaplaza — BSIT student, web developer. JavaScript, PHP, Laravel, and more.",
+    "Wild Dogs — a futuristic, clean duo portfolio by Kenno and Erana.",
 };
 
 export default function RootLayout({

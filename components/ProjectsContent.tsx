@@ -20,9 +20,9 @@ const MOCK_PROJECTS = [
     link: "#",
   },
   {
-    title: "Portfolio Site",
+    title: "Wild Dogs Duo Portfolio",
     description:
-      "Personal portfolio with AI assistant — this site. Next.js, Gemini, and Redis for a smart visitor experience.",
+      "A clean, futuristic team portfolio with an AI assistant. Built with Next.js, Gemini, and Redis.",
     stack: ["Next.js", "TypeScript", "Gemini AI", "Redis"],
     link: "#",
   },

@@ -104,10 +104,10 @@ export function Chatbox() {
             transition={{ type: "spring", bounce: 0.2, duration: 0.35 }}
             className="fixed bottom-24 right-6 z-50 w-[360px] overflow-hidden rounded-2xl border border-border bg-card shadow-xl"
           >
-            <div className="border-b border-border bg-gradient-to-b from-muted/60 to-muted/30 px-4 py-3">
-              <h3 className="font-semibold text-foreground">Ask about Kenno</h3>
+            <div className="border-b border-border bg-linear-to-b from-muted/60 to-muted/30 px-4 py-3">
+              <h3 className="font-semibold text-foreground">Ask Wild Dogs</h3>
               <p className="text-xs text-muted-foreground">
-                Life, skills, projects, hobbies — I&apos;ll answer from his portfolio.
+                Ask about Kenno or Erana — I&apos;ll answer from the team portfolio.
               </p>
             </div>
             <div className="flex max-h-[320px] flex-col overflow-y-auto p-3">
@@ -117,7 +117,7 @@ export function Chatbox() {
                   animate={{ opacity: 1 }}
                   className="py-4 text-center text-sm text-muted-foreground"
                 >
-                  e.g. &quot;What does Kenno study?&quot; or &quot;What are his hobbies?&quot;
+                  e.g. &quot;What are Erana&apos;s IT skills?&quot; or &quot;What does Kenno study?&quot;
                 </motion.p>
               ) : (
                 <div className="space-y-3">

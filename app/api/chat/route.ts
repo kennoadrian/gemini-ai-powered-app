@@ -39,7 +39,9 @@ async function generateWithModelRotation(fullPrompt: string): Promise<{ text: st
 }
 
 export async function GET() {
-  return Response.json({ message: "Portfolio AI chat API – POST with { prompt } to ask about Kenno." });
+  return Response.json({
+    message: 'Portfolio AI chat API – POST with { prompt } to ask about the "Wild Dogs" team (Kenno or Erana).',
+  });
 }
 
 export async function POST(request: Request) {

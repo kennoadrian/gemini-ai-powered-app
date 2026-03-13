@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Code2, ArrowRight } from "lucide-react";
+import { Code2, ArrowRight, Users } from "lucide-react";
 
 const container = {
   hidden: { opacity: 0 },
@@ -32,35 +32,56 @@ export default function HomePage() {
         >
           <motion.div
             variants={item}
-            className="relative mb-6 overflow-hidden rounded-full ring-4 ring-primary/20 shadow-xl"
+            className="relative mb-6 flex items-center justify-center gap-3"
           >
-            <Image
-              src="/profile.jpg"
-              alt="Kenno Adrian B. Ricaplaza"
-              width={160}
-              height={160}
-              priority
-              className="aspect-square object-cover"
-            />
+            <motion.div
+              initial={{ rotate: -6 }}
+              animate={{ rotate: 0 }}
+              transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
+              className="overflow-hidden rounded-full ring-4 ring-primary/20 shadow-xl"
+            >
+              <Image
+                src="/kennoprofile.jpg"
+                alt="Kenno Adrian B. Ricaplaza"
+                width={148}
+                height={148}
+                priority
+                className="aspect-square object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ rotate: 6 }}
+              animate={{ rotate: 0 }}
+              transition={{ type: "spring", bounce: 0.25, duration: 0.6, delay: 0.05 }}
+              className="overflow-hidden rounded-full ring-4 ring-primary/20 shadow-xl"
+            >
+              <Image
+                src="/enoprofile.jpg"
+                alt="Erana Jeo I"
+                width={148}
+                height={148}
+                priority
+                className="aspect-square object-cover"
+              />
+            </motion.div>
           </motion.div>
           <motion.p
             variants={item}
             className="mb-2 text-sm font-medium uppercase tracking-wider text-primary"
           >
-            Hello, I&apos;m
+            Duo portfolio
           </motion.p>
           <motion.h1
             variants={item}
             className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl"
           >
-            Kenno Adrian B. Ricaplaza
+            Wild Dogs
           </motion.h1>
           <motion.p
             variants={item}
             className="mb-10 max-w-xl text-lg text-muted-foreground"
           >
-            BSIT student & web developer. I build web applications with
-            JavaScript, PHP, Laravel, and love exploring new tech.
+            A clean, futuristic team portfolio by Kenno and Erana — building skills, projects, and ideas together.
           </motion.p>
           <motion.div
             variants={item}
@@ -73,7 +94,7 @@ export default function HomePage() {
                 "gap-2 transition-transform hover:scale-[1.02]"
               )}
             >
-              About me <ArrowRight className="size-4" />
+              Meet the team <ArrowRight className="size-4" />
             </Link>
             <Link
               href="/projects"
@@ -84,12 +105,21 @@ export default function HomePage() {
             >
               <Code2 className="size-4" /> Projects
             </Link>
+            <Link
+              href="/contacts"
+              className={cn(
+                buttonVariants({ variant: "ghost", size: "lg" }),
+                "gap-2 transition-transform hover:scale-[1.02]"
+              )}
+            >
+              <Users className="size-4" /> Contact
+            </Link>
           </motion.div>
           <motion.p
             variants={item}
             className="mt-12 text-sm text-muted-foreground"
           >
-            Have a question? Use the chat button in the corner to ask about me.
+            Have a question? Use the chat button to ask about Kenno or Erana.
           </motion.p>
         </motion.div>
       </section>

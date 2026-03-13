@@ -1,8 +1,8 @@
 import { ContactsContent } from "@/components/ContactsContent";
 
 export const metadata = {
-  title: "Contacts | Kenno Adrian B. Ricaplaza",
-  description: "Get in touch with Kenno Adrian.",
+  title: "Contacts | Wild Dogs",
+  description: "Get in touch with the Wild Dogs duo (Kenno and Erana).",
 };
 
 export default function ContactsPage() {
