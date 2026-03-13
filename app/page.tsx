@@ -157,16 +157,16 @@ export default function HomePage() {
                       <p className="text-xs font-medium text-muted-foreground">Design language</p>
                       <div className="mt-2 flex flex-wrap gap-2">
                         <span className="rounded-xl bg-muted/60 px-2.5 py-1 text-xs font-medium text-foreground">
-                          Glass
+                          Next.js
                         </span>
                         <span className="rounded-xl bg-muted/60 px-2.5 py-1 text-xs font-medium text-foreground">
-                          Neon
+                          Tailwind CSS
                         </span>
                         <span className="rounded-xl bg-muted/60 px-2.5 py-1 text-xs font-medium text-foreground">
                           Responsive
                         </span>
                         <span className="rounded-xl bg-muted/60 px-2.5 py-1 text-xs font-medium text-foreground">
-                          Motion
+                          Framer Motion
                         </span>
                       </div>
                     </div>
